@@ -1,0 +1,35 @@
+""" comentário
+de 
+bloco """
+
+// Comentario de linha
+
+int a = 1;
+float b = 2.5;
+if (a < b) {
+    a = a + 1;
+} else {
+    b = b - 1.0;
+}
+
+while (a != b) {
+    a = a + 2;
+    b = b - 0.5;
+    break;
+}
+
+void func(int x) {
+    return x * 2;
+}
+
+char c = 'A';
+bool flag = false;
+
+str s = "Hello, World!";
+
+for (int i = 0; true; i = i + 1) {
+    // Looping from 0 to 9
+    print(i);
+}
+
+null_pointer = null;
