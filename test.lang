@@ -1,20 +1,20 @@
-""" comentário
+""" comentario
 de 
 bloco """
 
 // Comentario de linha
 
-int a = 1;
-float b = 2.5;
-if (a < b) {
-    a = a + 1;
+int variavel = 1;
+float outra = 2.5;
+if (variavel < outra) {
+    variavel = variavel + 1;
 } else {
-    b = b - 1.0;
+    outra = outra - 1.0;
 }
 
-while (a != b) {
-    a = a + 2;
-    b = b - 0.5;
+while (variavel != outra) {
+    variavel = variavel + 2;
+    outra = outra - 0.5;
     break;
 }
 

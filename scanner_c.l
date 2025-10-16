@@ -27,10 +27,7 @@ typedef enum {
     T_CHAVES_ESQ, T_CHAVES_DIR,
 
     // Erro
-    T_UNKNOWN,
-
-    // Comentario
-    T_COMMENT
+    T_UNKNOWN
 } TokenType;
 
 int yylval;
@@ -77,7 +74,7 @@ MINUSCULO      (#BF0000)|(#C20000)|(#C40000)|(#C70000)|(#C90000)|(#CC0000)|(#CE0
 MAIUSCULO      (#800000)|(#820000)|(#840000)|(#870000)|(#890000)|(#8C0000)|(#8E0000)|(#910000)|(#930000)|(#960000)|(#980000)|(#9A0000)|(#9D0000)|(#9F0000)|(#A20000)|(#A40000)|(#A70000)|(#A90000)|(#AC0000)|(#AE0000)|(#B10000)|(#B30000)|(#B50000)|(#B80000)|(#BA0000)|(#BD0000)
 LETRA          {MINUSCULO}|{MAIUSCULO}
 ALPHANUMERICO  {LETRA}|{DIGITO}
-UNDERINE         #AB930F
+UNDERLINE         #AB930F
 ESPACO           #000000
 COMMENT_LINE     #014100
 COMMENT_BLOCK    #f0b
@@ -113,7 +110,8 @@ CHAVE_R        #FD46CD
 
 /* Seção de Regras */
 %%
-[\t]+         { /* Ignorar espaços em branco e tabulações */ }
+[\t]+         { /* Ignorar tabulações */ }
+({ESPACO})+       { /* Ignora espaços */ }
 \n             { /* Apenas consome a nova linha, yylineno é incrementado automaticamente */ }
 {COMMENT_LINE}[^\n]* {  }
 {COMMENT_BLOCK}([^#]|(#+[^f])|(#+f[^0])|(#+f0[^b]))*{COMMENT_BLOCK} {  }
@@ -134,7 +132,7 @@ CHAVE_R        #FD46CD
 #520000 {return T_FALSE;}
 #d9d2d2  {return T_NULL;}
 
-({DIGITO})+      { yylval = atoi(yytext); return T_INTEGER; }
+({DIGITO})+      {  return T_INTEGER; }
 ({DIGITO})+({PONTO})({DIGITO})+         { return T_FLOAT; }
 ({ASPAS})({ASCII_SEM_ASPAS})*({ASPAS}) { return T_STRING; }
 ({ASPA})(({ASCII_SEM_ASPA})|({CONTRA_BARRA})(({MINUSCULO})|({ASPA})|({CONTRA_BARRA})))({ASPA}) { return T_LITERAL_CHAR; }
@@ -192,10 +190,18 @@ int main(int argc, char **argv) {
             case T_FLOAT_KEYWORD: printf("Token: %d (T_FLOAT_KEYWORD)| Lexema: %s\n", token_id, yytext); break;
             case T_RETURN:        printf("Token: %d (T_RETURN)      | Lexema: %s\n", token_id, yytext); break;
             case T_CHAR_KEYWORD:  printf("Token: %d (T_CHAR_KEYWORD)| Lexema: %s\n", token_id, yytext); break;
+            case T_BOOL:          printf("Token: %d (T_BOOL)        | Lexema: %s\n", token_id, yytext); break;
+            case T_STR:           printf("Token: %d (T_STR)         | Lexema: %s\n", token_id, yytext); break;
+            case T_FOR:           printf("Token: %d (T_FOR)         | Lexema: %s\n", token_id, yytext); break;
+            case T_VOID:          printf("Token: %d (T_VOID)         | Lexema: %s\n", token_id, yytext); break;
+            case T_BREAK:         printf("Token: %d (T_BREAK)         | Lexema: %s\n", token_id, yytext); break;
+            case T_TRUE:          printf("Token: %d (T_TRUE)         | Lexema: %s\n", token_id, yytext); break;
+            case T_FALSE:         printf("Token: %d (T_FALSE)         | Lexema: %s\n", token_id, yytext); break;
+            case T_NULL:          printf("Token: %d (T_NULL)         | Lexema: %s\n", token_id, yytext); break;
 
             // Identificadores e Literais
             case T_ID:            printf("Token: %d (T_ID)          | Posição: %d, Lexema: %s\n", token_id, yylval, symbol_table[yylval]); break;
-            case T_INTEGER:       printf("Token: %d (T_INTEGER)     | Valor: %d\n", token_id, yylval); break;
+            case T_INTEGER:       printf("Token: %d (T_INTEGER)     | Lexema: %s\n", token_id, yytext); break;
             case T_FLOAT:         printf("Token: %d (T_FLOAT)       | Lexema: %s\n", token_id, yytext); break;
             case T_STRING:        printf("Token: %d (T_STRING)      | Lexema: %s\n", token_id, yytext); break;
             case T_LITERAL_CHAR:  printf("Token: %d (T_LITERAL_CHAR)| Lexema: %s\n", token_id, yytext); break;

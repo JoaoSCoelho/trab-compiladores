@@ -30,4 +30,4 @@ UNDERINE         #AB930F
 ESPACO           #000000
 ```
 
-#ffff00ff
+#ffff00

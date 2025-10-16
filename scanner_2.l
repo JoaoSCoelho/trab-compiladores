@@ -71,7 +71,7 @@ CHAR           \'([^']|\\([a-z]|\'|\\))\'
 "else"         { printf("#ff0000"); return T_KEYWORD; }
 "while"        { printf("#eaff00"); return T_KEYWORD; }
 "int"          { printf("#03fcd7"); return T_KEYWORD; }
-"float"        { printf("#ff00c3"); return T_KEYWORD; }
+"float "        { printf("#ff00c3"); return T_KEYWORD; }
 "return"       { printf("#3f2c1e"); return T_KEYWORD; }
 "for"          { printf("#ff9a00"); return T_KEYWORD; }
 "void"         { printf("#0f5a00"); return T_KEYWORD; }
@@ -86,10 +86,22 @@ CHAR           \'([^']|\\([a-z]|\'|\\))\'
 "\"\"\"" { printf("#f0b"); return T_KEYWORD; }
 
 .              { 
-    printf("#%06X", ((((int)*yytext) - 32) * 178481)); 
-    return T_UNKNOWN;
+    if ((int)*yytext >= 48 && (int)*yytext < 58) {
+        printf("#00%02X00", ((((int)*yytext) - 48) * 12 + 147)); 
+        return T_UNKNOWN;
+    } else if ((int)*yytext >= 65 && (int)*yytext < 91) {
+        printf("#%02X0000", (int)((((int)*yytext) - 65) * 2.4519 + 128)); 
+        return T_UNKNOWN;
+    } else if ((int)*yytext >= 97 && (int)*yytext < 123) {
+        printf("#%02X0000", (int)((((int)*yytext) - 97) * 2.4519 + 128 + 63.75)); 
+        return T_UNKNOWN;
+    } else {
+        printf("#%06X", ((((int)*yytext) - 32) * 178481)); 
+        return T_UNKNOWN;
+    }
     
-     }
+    
+}
 
 %%
 /* Seção de Código do Usuário */
