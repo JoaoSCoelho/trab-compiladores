@@ -1376,10 +1376,10 @@ goto find_rule; \
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "scanner_c.l"
+#line 1 "scanner_c_full.l"
 #define INITIAL 0
 /* Seção de Definições em C */
-#line 3 "scanner_c.l"
+#line 3 "scanner_c_full.l"
 #include <stdio.h>
 #include <string.h>
 
@@ -1433,17 +1433,9 @@ int get_symbol_position(const char *id) {
     }
 }
 
-/*
-{INTEIRO}      { yylval = atoi(yytext); return T_INTEGER; }
-{FLOAT}        { return T_FLOAT; }
-{STRING_LITERAL} { return T_STRING; }
-{CHAR_LITERAL} { return T_LITERAL_CHAR; }
-
-{ID}           { yylval = get_symbol_position(yytext); if (yylval != -1) return T_ID; /* Ignora o ID se a tabela estiver cheia */ 
-
 /* Definições de Expressões Regulares (apelidos) */
 /* Seção de Regras */
-#line 1447 "lex.yy.c"
+#line 1439 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -1594,9 +1586,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 113 "scanner_c.l"
+#line 105 "scanner_c_full.l"
 
-#line 1600 "lex.yy.c"
+#line 1592 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -1689,237 +1681,237 @@ do_action:	/* This label is used only to access EOF actions. */
 	{ /* beginning of action switch */
 case 1:
 YY_RULE_SETUP
-#line 114 "scanner_c.l"
+#line 106 "scanner_c_full.l"
 { /* Ignorar tabulações */ }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 115 "scanner_c.l"
+#line 107 "scanner_c_full.l"
 { /* Ignora espaços */ }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 116 "scanner_c.l"
+#line 108 "scanner_c_full.l"
 { /* Apenas consome a nova linha, yylineno é incrementado automaticamente */ }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 117 "scanner_c.l"
+#line 109 "scanner_c_full.l"
 {  }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 118 "scanner_c.l"
+#line 110 "scanner_c_full.l"
 {  }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 120 "scanner_c.l"
+#line 112 "scanner_c_full.l"
 { return T_IF; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 121 "scanner_c.l"
+#line 113 "scanner_c_full.l"
 { return T_ELSE; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 122 "scanner_c.l"
+#line 114 "scanner_c_full.l"
 { return T_WHILE; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 123 "scanner_c.l"
+#line 115 "scanner_c_full.l"
 { return T_INT_KEYWORD; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 124 "scanner_c.l"
+#line 116 "scanner_c_full.l"
 {return T_FLOAT_KEYWORD; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 125 "scanner_c.l"
+#line 117 "scanner_c_full.l"
 { return T_RETURN; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 126 "scanner_c.l"
+#line 118 "scanner_c_full.l"
 {return T_CHAR_KEYWORD; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 127 "scanner_c.l"
+#line 119 "scanner_c_full.l"
 {return T_BOOL;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 128 "scanner_c.l"
+#line 120 "scanner_c_full.l"
 {return T_STR;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 129 "scanner_c.l"
+#line 121 "scanner_c_full.l"
 {return T_FOR;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 130 "scanner_c.l"
+#line 122 "scanner_c_full.l"
 {return T_VOID;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 131 "scanner_c.l"
+#line 123 "scanner_c_full.l"
 {return T_BREAK;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 132 "scanner_c.l"
+#line 124 "scanner_c_full.l"
 {return T_TRUE;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 133 "scanner_c.l"
+#line 125 "scanner_c_full.l"
 {return T_FALSE;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 134 "scanner_c.l"
+#line 126 "scanner_c_full.l"
 {return T_NULL;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 136 "scanner_c.l"
+#line 128 "scanner_c_full.l"
 {  return T_INTEGER; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 137 "scanner_c.l"
+#line 129 "scanner_c_full.l"
 { return T_FLOAT; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 138 "scanner_c.l"
+#line 130 "scanner_c_full.l"
 { return T_STRING; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 139 "scanner_c.l"
+#line 131 "scanner_c_full.l"
 { return T_LITERAL_CHAR; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 141 "scanner_c.l"
+#line 133 "scanner_c_full.l"
 { yylval = get_symbol_position(yytext); if (yylval != -1) return T_ID; /* Ignora o ID se a tabela estiver cheia */ }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 143 "scanner_c.l"
+#line 135 "scanner_c_full.l"
 { return T_OP_IGUALDADE; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 144 "scanner_c.l"
+#line 136 "scanner_c_full.l"
 { return T_OP_DIFERENTE; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 145 "scanner_c.l"
+#line 137 "scanner_c_full.l"
 { return T_OP_MENOR_IGUAL; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 146 "scanner_c.l"
+#line 138 "scanner_c_full.l"
 { return T_OP_MAIOR_IGUAL; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 147 "scanner_c.l"
+#line 139 "scanner_c_full.l"
 { return T_OP_MENOR; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 148 "scanner_c.l"
+#line 140 "scanner_c_full.l"
 { return T_OP_MAIOR; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 149 "scanner_c.l"
+#line 141 "scanner_c_full.l"
 { return T_OP_SOMA; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 150 "scanner_c.l"
+#line 142 "scanner_c_full.l"
 { return T_OP_SUB; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 151 "scanner_c.l"
+#line 143 "scanner_c_full.l"
 { return T_OP_MULT; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 152 "scanner_c.l"
+#line 144 "scanner_c_full.l"
 { return T_OP_DIV; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 153 "scanner_c.l"
+#line 145 "scanner_c_full.l"
 { return T_OP_ATRIBUICAO; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 154 "scanner_c.l"
+#line 146 "scanner_c_full.l"
 { return T_OP_TERNARY_IF; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 155 "scanner_c.l"
+#line 147 "scanner_c_full.l"
 { return T_OP_TERNARY_ELSE; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 157 "scanner_c.l"
+#line 149 "scanner_c_full.l"
 { return T_PONTO_VIRGULA; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 158 "scanner_c.l"
+#line 150 "scanner_c_full.l"
 { return T_VIRGULA; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 159 "scanner_c.l"
+#line 151 "scanner_c_full.l"
 { return T_PARENTESES_ESQ; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 160 "scanner_c.l"
+#line 152 "scanner_c_full.l"
 { return T_PARENTESES_DIR; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 161 "scanner_c.l"
+#line 153 "scanner_c_full.l"
 { return T_CHAVES_ESQ; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 162 "scanner_c.l"
+#line 154 "scanner_c_full.l"
 { return T_CHAVES_DIR; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 163 "scanner_c.l"
+#line 155 "scanner_c_full.l"
 { return T_COLCHETES_ESQ; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 164 "scanner_c.l"
+#line 156 "scanner_c_full.l"
 { return T_COLCHETES_DIR; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 166 "scanner_c.l"
+#line 158 "scanner_c_full.l"
 {
                    fprintf(stderr, "Erro Léxico na linha %d: Caractere inesperado '%s'\n", yylineno, yytext);
                    return T_UNKNOWN;
@@ -1927,10 +1919,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 171 "scanner_c.l"
+#line 163 "scanner_c_full.l"
 ECHO;
 	YY_BREAK
-#line 1934 "lex.yy.c"
+#line 1926 "lex.yy.c"
 			case YY_STATE_EOF(INITIAL):
 				yyterminate();
 
@@ -2814,7 +2806,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 171 "scanner_c.l"
+#line 163 "scanner_c_full.l"
 
 /* Seção de Código do Usuário */
 
@@ -2837,173 +2829,173 @@ int main(int argc, char **argv) {
             // Palavras-chave
             case T_IF:            
             printf("<%s>", yytext);
-            // printf("Token: %d (T_IF)          | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_IF)          | Lexema: %s\n", token_id, yytext); 
             break;
             case T_ELSE:          
             printf("<%s>", yytext);
-            // printf("Token: %d (T_ELSE)        | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_ELSE)        | Lexema: %s\n", token_id, yytext); 
             break;
             case T_WHILE:         
             printf("<%s>", yytext);
-            // printf("Token: %d (T_WHILE)       | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_WHILE)       | Lexema: %s\n", token_id, yytext); 
             break;
             case T_INT_KEYWORD:   
             printf("<%s>", yytext);
-            // printf("Token: %d (T_INT_KEYWORD) | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_INT_KEYWORD) | Lexema: %s\n", token_id, yytext); 
             break;
             case T_FLOAT_KEYWORD: 
             printf("<%s>", yytext);
-            // printf("Token: %d (T_FLOAT_KEYWORD)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_FLOAT_KEYWORD)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_RETURN:        
             printf("<%s>", yytext);
-            // printf("Token: %d (T_RETURN)      | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_RETURN)      | Lexema: %s\n", token_id, yytext); 
             break;
             case T_CHAR_KEYWORD:  
             printf("<%s>", yytext);
-            // printf("Token: %d (T_CHAR_KEYWORD)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_CHAR_KEYWORD)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_BOOL:          
             printf("<%s>", yytext);
-            // printf("Token: %d (T_BOOL)        | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_BOOL)        | Lexema: %s\n", token_id, yytext); 
             break;
             case T_STR:           
             printf("<%s>", yytext);
-            // printf("Token: %d (T_STR)         | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_STR)         | Lexema: %s\n", token_id, yytext); 
             break;
             case T_FOR:           
             printf("<%s>", yytext);
-            // printf("Token: %d (T_FOR)         | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_FOR)         | Lexema: %s\n", token_id, yytext); 
             break;
             case T_VOID:          
             printf("<%s>", yytext);
-            // printf("Token: %d (T_VOID)         | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_VOID)         | Lexema: %s\n", token_id, yytext); 
             break;
             case T_BREAK:         
             printf("<%s>", yytext);
-            // printf("Token: %d (T_BREAK)         | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_BREAK)         | Lexema: %s\n", token_id, yytext); 
             break;
             case T_TRUE:          
             printf("<%s>", yytext);
-            // printf("Token: %d (T_TRUE)         | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_TRUE)         | Lexema: %s\n", token_id, yytext); 
             break;
             case T_FALSE:         
             printf("<%s>", yytext);
-            // printf("Token: %d (T_FALSE)         | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_FALSE)         | Lexema: %s\n", token_id, yytext); 
             break;
             case T_NULL:          
             printf("<%s>", yytext);
-            // printf("Token: %d (T_NULL)         | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_NULL)         | Lexema: %s\n", token_id, yytext); 
             break;
 
             // Identificadores e Literais
             case T_ID:            
             printf("<id,%d>", yylval);
-            // printf("Token: %d (T_ID)          | Posição: %d, Lexema: %s\n", token_id, yylval, symbol_table[yylval]); 
+            printf("Token: %d (T_ID)          | Posição: %d, Lexema: %s\n", token_id, yylval, symbol_table[yylval]); 
             break;
             case T_INTEGER:       
             printf("<int,%s>", yytext);
-            // printf("Token: %d (T_INTEGER)     | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_INTEGER)     | Lexema: %s\n", token_id, yytext); 
             break;
             case T_FLOAT:         
             printf("<float,%s>", yytext);
-            // printf("Token: %d (T_FLOAT)       | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_FLOAT)       | Lexema: %s\n", token_id, yytext); 
             break;
             case T_STRING:        
             printf("<string,%s>", yytext);
-            // printf("Token: %d (T_STRING)      | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_STRING)      | Lexema: %s\n", token_id, yytext); 
             break;
             case T_LITERAL_CHAR:  
             printf("<char,%s>", yytext);
-            // printf("Token: %d (T_LITERAL_CHAR)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_LITERAL_CHAR)| Lexema: %s\n", token_id, yytext); 
             break;
 
             // Operadores
             case T_OP_IGUALDADE:  
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_IGUALDADE)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_IGUALDADE)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_DIFERENTE:  
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_DIFERENTE)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_DIFERENTE)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_MENOR:      
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_MENOR)    | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_MENOR)    | Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_MAIOR:      
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_MAIOR)    | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_MAIOR)    | Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_MENOR_IGUAL:
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_MENOR_IGUAL)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_MENOR_IGUAL)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_MAIOR_IGUAL:
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_MAIOR_IGUAL)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_MAIOR_IGUAL)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_SOMA:       
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_SOMA)     | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_SOMA)     | Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_SUB:        
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_SUB)      | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_SUB)      | Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_MULT:       
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_MULT)     | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_MULT)     | Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_DIV:        
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_DIV)      | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_DIV)      | Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_ATRIBUICAO: 
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_ATRIBUICAO)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_ATRIBUICAO)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_TERNARY_IF:        
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_TERNARY_IF)      | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_TERNARY_IF)      | Lexema: %s\n", token_id, yytext); 
             break;
             case T_OP_TERNARY_ELSE: 
             printf("<%s>", yytext);
-            // printf("Token: %d (T_OP_TERNARY_ELSE)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_OP_TERNARY_ELSE)| Lexema: %s\n", token_id, yytext); 
             break;
 
             // Separadores
             case T_PONTO_VIRGULA:  
             printf("<%s>", yytext);
-            // printf("Token: %d (T_PONTO_VIRGULA)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_PONTO_VIRGULA)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_VIRGULA:        
             printf("<%s>", yytext);
-            // printf("Token: %d (T_VIRGULA)      | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_VIRGULA)      | Lexema: %s\n", token_id, yytext); 
             break;
             case T_PARENTESES_ESQ: 
             printf("<%s>", yytext);
-            // printf("Token: %d (T_PARENTESES_ESQ)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_PARENTESES_ESQ)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_PARENTESES_DIR: 
             printf("<%s>", yytext);
-            // printf("Token: %d (T_PARENTESES_DIR)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_PARENTESES_DIR)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_CHAVES_ESQ:     
             printf("<%s>", yytext);
-            // printf("Token: %d (T_CHAVES_ESQ)   | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_CHAVES_ESQ)   | Lexema: %s\n", token_id, yytext); 
             break;
             case T_CHAVES_DIR:     
             printf("<%s>", yytext);
-            // printf("Token: %d (T_CHAVES_DIR)   | Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_CHAVES_DIR)   | Lexema: %s\n", token_id, yytext); 
             break;
             case T_COLCHETES_ESQ:
             printf("<%s>", yytext);
-            // printf("Token: %d (T_COLCHETES_ESQ)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_COLCHETES_ESQ)| Lexema: %s\n", token_id, yytext); 
             break;
             case T_COLCHETES_DIR:
             printf("<%s>", yytext);
-            // printf("Token: %d (T_COLCHETES_DIR)| Lexema: %s\n", token_id, yytext); 
+            printf("Token: %d (T_COLCHETES_DIR)| Lexema: %s\n", token_id, yytext); 
             break;
 
             case T_UNKNOWN:
