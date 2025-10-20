@@ -67,17 +67,17 @@ CHAR           \'([^']|\\([a-z]|\'|\\))\'
 [\t]+         { printf("%s", yytext); return 1; }
 \n             { printf("%s", yytext); return 1; }
 
-"if"           { printf("#006eff"); return T_KEYWORD; }
+"if "           { printf("#006eff#000000"); return T_KEYWORD; }
 "else"         { printf("#ff0000"); return T_KEYWORD; }
 "while"        { printf("#eaff00"); return T_KEYWORD; }
-"int"          { printf("#03fcd7"); return T_KEYWORD; }
-"float "        { printf("#ff00c3"); return T_KEYWORD; }
-"return"       { printf("#3f2c1e"); return T_KEYWORD; }
-"for"          { printf("#ff9a00"); return T_KEYWORD; }
-"void"         { printf("#0f5a00"); return T_KEYWORD; }
-"char"         { printf("#ff006e"); return T_KEYWORD; }
-"bool"         { printf("#1900ff"); return T_KEYWORD; }
-"str" { printf("#00ff04"); return T_KEYWORD; }
+"int "          { printf("#03fcd7#000000"); return T_KEYWORD; }
+"float "        { printf("#ff00c3#000000"); return T_KEYWORD; }
+"return "       { printf("#3f2c1e#000000"); return T_KEYWORD; }
+"for "          { printf("#ff9a00#000000"); return T_KEYWORD; }
+"void "         { printf("#0f5a00#000000"); return T_KEYWORD; }
+"char "         { printf("#ff006e#000000"); return T_KEYWORD; }
+"bool "         { printf("#1900ff#000000"); return T_KEYWORD; }
+"str " { printf("#00ff04#000000"); return T_KEYWORD; }
 "break" { printf("#ff00ff"); return T_KEYWORD; }
 "true" { printf("#84ffce"); return T_KEYWORD; }
 "false" { printf("#520000"); return T_KEYWORD; }
@@ -139,13 +139,13 @@ int main(int argc, char **argv) {
     }
 
     // Adicione este trecho para imprimir a tabela de símbolos
-    printf("\n\n--- Tabela de Símbolos Final ---\n");
-    printf("Posição | Identificador\n");
-    printf("-----------------------------\n");
-    for (int i = 0; i < symbol_count; i++) {
-        printf("%-7d | %s\n", i, symbol_table[i]);
-    }
-    printf("-----------------------------\n\n");
+    // printf("\n\n--- Tabela de Símbolos Final ---\n");
+    // printf("Posição | Identificador\n");
+    // printf("-----------------------------\n");
+    // for (int i = 0; i < symbol_count; i++) {
+    //     printf("%-7d | %s\n", i, symbol_table[i]);
+    // }
+    // printf("-----------------------------\n\n");
 
 
     // Libera a memória alocada para a tabela de símbolos

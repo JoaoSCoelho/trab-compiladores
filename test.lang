@@ -6,6 +6,8 @@ bloco """
 
 int variavel = 1;
 float outra = 2.5;
+
+int vetor[8] = [0, 1, 2, 3, 4, 5, 6, 7];
 if (variavel < outra) {
     variavel = variavel + 1;
 } else {
