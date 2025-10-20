@@ -53,14 +53,6 @@ int get_symbol_position(const char *id) {
     }
 }
 
-/*
-{INTEIRO}      { yylval = atoi(yytext); return T_INTEGER; }
-{FLOAT}        { return T_FLOAT; }
-{STRING_LITERAL} { return T_STRING; }
-{CHAR_LITERAL} { return T_LITERAL_CHAR; }
-
-{ID}           { yylval = get_symbol_position(yytext); if (yylval != -1) return T_ID; /* Ignora o ID se a tabela estiver cheia */ 
-
 %}
 
 %option noyywrap
