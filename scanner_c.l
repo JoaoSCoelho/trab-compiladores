@@ -20,7 +20,8 @@ typedef enum {
 
     // Operadores
     T_OP_IGUALDADE, T_OP_DIFERENTE, T_OP_MENOR, T_OP_MAIOR, T_OP_MENOR_IGUAL,
-    T_OP_MAIOR_IGUAL, T_OP_SOMA, T_OP_SUB, T_OP_MULT, T_OP_DIV, T_OP_ATRIBUICAO,
+    T_OP_MAIOR_IGUAL, T_OP_SOMA, T_OP_SUB, T_OP_MULT, T_OP_DIV, T_OP_ATRIBUICAO, 
+    T_OP_TERNARY_IF, T_OP_TERNARY_ELSE,
 
     // Separadores
     T_PONTO_VIRGULA, T_VIRGULA, T_PARENTESES_ESQ, T_PARENTESES_DIR,
@@ -150,6 +151,8 @@ CHAVE_R        #FD46CD
 ({ASTERISCO})            { return T_OP_MULT; }
 ({BARRA})            { return T_OP_DIV; }
 ({IGUAL})            { return T_OP_ATRIBUICAO; }
+({INTERROGACAO})            { return T_OP_TERNARY_IF; }
+({DOIS_PONTOS})            { return T_OP_TERNARY_ELSE; }
 
 ({PONTO_E_VIRGULA})            { return T_PONTO_VIRGULA; }
 ({VIRGULA})            { return T_VIRGULA; }
@@ -312,6 +315,14 @@ int main(int argc, char **argv) {
             case T_OP_ATRIBUICAO: 
             printf("<%s>", yytext);
             // printf("Token: %d (T_OP_ATRIBUICAO)| Lexema: %s\n", token_id, yytext); 
+            break;
+            case T_OP_TERNARY_IF:        
+            printf("<%s>", yytext);
+            // printf("Token: %d (T_OP_TERNARY_IF)      | Lexema: %s\n", token_id, yytext); 
+            break;
+            case T_OP_TERNARY_ELSE: 
+            printf("<%s>", yytext);
+            // printf("Token: %d (T_OP_TERNARY_ELSE)| Lexema: %s\n", token_id, yytext); 
             break;
 
             // Separadores

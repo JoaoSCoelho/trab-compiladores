@@ -35,3 +35,5 @@ for (int i = 0; true; i = i + 1) {
 }
 
 null_pointer = null;
+
+variavel < outra ? print(variavel) : print(outra);
