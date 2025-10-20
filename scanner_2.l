@@ -72,7 +72,7 @@ CHAR           \'([^']|\\([a-z]|\'|\\))\'
 "while"        { printf("#eaff00"); return T_KEYWORD; }
 "int "          { printf("#03fcd7#000000"); return T_KEYWORD; }
 "float "        { printf("#ff00c3#000000"); return T_KEYWORD; }
-"return "       { printf("#3f2c1e#000000"); return T_KEYWORD; }
+"return"       { printf("#3f2c1e"); return T_KEYWORD; }
 "for "          { printf("#ff9a00#000000"); return T_KEYWORD; }
 "void "         { printf("#0f5a00#000000"); return T_KEYWORD; }
 "char "         { printf("#ff006e#000000"); return T_KEYWORD; }
